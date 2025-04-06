@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: SHOP-SERVICE
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shop
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8082
