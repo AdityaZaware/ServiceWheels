@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for Shop-Service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="Shop-Service" />
+        <module name="User-Service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ApiGateway" target="21" />
+      <module name="Appointment-Service" target="21" />
+      <module name="BookingService" target="21" />
+      <module name="MechanicService" target="21" />
+      <module name="ServiceRegistry" target="21" />
+      <module name="UserService" target="21" />
+      <module name="Work-Services" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ApiGateway" options="-parameters" />
+      <module name="Appointment-Service" options="-parameters" />
+      <module name="BookingService" options="-parameters" />
+      <module name="MechanicService" options="-parameters" />
+      <module name="ServiceRegistry" options="-parameters" />
+      <module name="Shop-Service" options="-parameters" />
+      <module name="User-Service" options="-parameters" />
+      <module name="UserService" options="-parameters" />
+      <module name="Work-Services" options="-parameters" />
+    </option>
+  </component>
+</project>
