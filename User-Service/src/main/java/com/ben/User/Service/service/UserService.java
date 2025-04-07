@@ -1,5 +1,6 @@
 package com.ben.User.Service.service;
 
+import com.ben.User.Service.dto.MechanicDto;
 import com.ben.User.Service.entity.User;
 import com.ben.User.Service.request.UserRequest;
 import org.springframework.stereotype.Service;
@@ -11,4 +12,6 @@ public interface UserService {
     User getUserById(Long id);
 
     User getUserByEmail(String email);
+
+    MechanicDto getMechanicByEmail(String email);
 }

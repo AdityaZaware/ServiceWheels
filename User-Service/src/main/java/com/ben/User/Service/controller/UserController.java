@@ -1,5 +1,6 @@
 package com.ben.User.Service.controller;
 
+import com.ben.User.Service.dto.MechanicDto;
 import com.ben.User.Service.entity.User;
 import com.ben.User.Service.request.UserRequest;
 import com.ben.User.Service.service.UserService;
@@ -28,4 +29,11 @@ public class UserController {
     public ResponseEntity<User> getUserByEmail(@PathVariable String email) {
         return ResponseEntity.ok(userService.getUserByEmail(email));
     }
+
+    @GetMapping("mechanic/email/{email}")
+    public ResponseEntity<MechanicDto> getMechanicByEmail(@PathVariable String email) {
+        return ResponseEntity.ok(userService.getMechanicByEmail(email));
+    }
+
+
 }

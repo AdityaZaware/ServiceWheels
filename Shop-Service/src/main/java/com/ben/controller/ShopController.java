@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -14,6 +15,11 @@ import java.util.Optional;
 public class ShopController {
 
     private final ShopService shopService;
+
+    @GetMapping
+    public ResponseEntity<String> hello() {
+        return ResponseEntity.ok("Hello");
+    }
 
     @PostMapping("/register")
     public ResponseEntity<Shop> registerShop(@RequestBody Shop shop) {
@@ -43,5 +49,10 @@ public class ShopController {
     public ResponseEntity<Shop> getShopByOwnerEmail(@PathVariable String email) {
         Optional<Shop> shop = shopService.getShopByOwnerEmail(email);
         return shop.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/vehicleType/{vehicleType}")
+    public ResponseEntity<List<Shop>> getShopByVehicleType(@PathVariable String vehicleType) {
+        return ResponseEntity.ok(shopService.getShopByVehicleType(vehicleType));
     }
 }

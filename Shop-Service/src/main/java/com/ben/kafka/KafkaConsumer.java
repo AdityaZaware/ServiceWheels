@@ -12,7 +12,7 @@ public class KafkaConsumer {
 
     private final ShopService service;
 
-    @KafkaListener(topics = "mechanic_registered", groupId = "group_id")
+    @KafkaListener(topics = "service_wheels", groupId = "shop-group")
     public void MechanicRegistered(String email) {
         Shop shop = new Shop();
         shop.setName("Mechanic' Shop");

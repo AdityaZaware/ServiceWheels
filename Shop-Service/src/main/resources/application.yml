@@ -4,13 +4,21 @@ spring:
 
   datasource:
     url: jdbc:postgresql://localhost:5432/shop
-    username: root
-    password: root
+    username: ben
+    password: ben
+
 
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: shop-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
 server:
   port: 8082
