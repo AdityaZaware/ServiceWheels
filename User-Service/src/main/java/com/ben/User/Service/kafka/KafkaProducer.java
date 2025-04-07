@@ -11,7 +11,6 @@ public class KafkaProducer {
 
     private static final String TOPIC = "service_wheels";
 
-    @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
     public KafkaProducer(KafkaTemplate<String, String> kafkaTemplate) {
